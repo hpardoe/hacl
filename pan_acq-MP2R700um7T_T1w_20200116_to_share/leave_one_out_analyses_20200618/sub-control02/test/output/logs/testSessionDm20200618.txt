@@ -1,0 +1,255 @@
+2020-7-22 17:48:26.73: =============================== logger created =======================================
+2020-7-22 17:48:26.73: 
+2020-7-22 17:48:26.74: ======================== Starting new session ============================
+2020-7-22 17:48:26.74: Command line arguments given: 
+Namespace(device='cuda', model_cfg='/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/model/modelConfig.cfg', reset_trainer=False, saved_model='/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/output/saved_models/trainSessionDm_20200618/deepMedic_mp2r_hipp_amyg_seg_20200618.trainSessionDm_20200618.final.2020-07-03.20.33.03.630252.model.ckpt', test_cfg='/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/testConfig.cfg', train_cfg=None)
+2020-7-22 17:48:28.71: Available devices to Tensorflow:
+[name: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 16502847015454657760
+, name: "/device:GPU:0"
+device_type: "GPU"
+memory_limit: 15675496858
+locality {
+  bus_id: 1
+  links {
+  }
+}
+incarnation: 9351687287088291361
+physical_device_desc: "device: 0, name: Tesla V100-SXM2-16GB, pci bus id: 0000:62:00.0, compute capability: 7.0"
+]
+2020-7-22 17:48:28.71: CONFIG: The configuration file for the [model] given is: /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/model/modelConfig.cfg
+2020-7-22 17:48:28.71: =============================================================
+2020-7-22 17:48:28.71: ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2020-7-22 17:48:28.72: =============================================================
+2020-7-22 17:48:28.72: CNN model's name = deepMedic_mp2r_hipp_amyg_seg_20200618
+2020-7-22 17:48:28.72: ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2020-7-22 17:48:28.72: Number of Classes (including background) = 5
+2020-7-22 17:48:28.73: ~~Normal Pathway~~
+2020-7-22 17:48:28.73: Number of Input Channels = 1
+2020-7-22 17:48:28.74: Number of Layers = 8
+2020-7-22 17:48:28.74: Number of Feature Maps per layer = [30, 30, 40, 40, 40, 40, 50, 50]
+2020-7-22 17:48:28.74: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2020-7-22 17:48:28.74: Receptive Field = [17, 17, 17]
+2020-7-22 17:48:28.74: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2020-7-22 17:48:28.74: Layers that will be made of Lower Rank (indices from 0) = []
+2020-7-22 17:48:28.75: Lower Rank layers will be made of rank = []
+2020-7-22 17:48:28.75: ~~Subsampled Pathway~~
+2020-7-22 17:48:28.75: Use subsampled Pathway = True
+2020-7-22 17:48:28.75: Number of subsampled pathways that will be built = 2
+2020-7-22 17:48:28.75: Number of Layers (per sub-pathway) = [8, 8]
+2020-7-22 17:48:28.76: Number of Feature Maps per layer (per sub-pathway) = [[30, 30, 40, 40, 40, 40, 50, 50], [30, 30, 40, 40, 40, 40, 50, 50]]
+2020-7-22 17:48:28.76: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2020-7-22 17:48:28.76: Receptive Field = [17, 17, 17]
+2020-7-22 17:48:28.77: Subsampling Factor per dimension (per sub-pathway) = [[3, 3, 3], [5, 5, 5]]
+2020-7-22 17:48:28.77: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2020-7-22 17:48:28.78: Layers that will be made of Lower Rank (indices from 0) = []
+2020-7-22 17:48:28.78: Lower Rank layers will be made of rank = []
+2020-7-22 17:48:28.78: ~~Fully Connected Pathway~~
+2020-7-22 17:48:28.81: Number of additional FC layers (Excluding the Classif. Layer) = 2
+2020-7-22 17:48:28.82: Number of Feature Maps in the additional FC layers = [250, 250]
+2020-7-22 17:48:28.82: Residual connections added at the output of layers (indices from 0) = [1]
+2020-7-22 17:48:28.82: Layers that will be made of Lower Rank (indices from 0) = []
+2020-7-22 17:48:28.83: Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [3, 3, 3]
+2020-7-22 17:48:28.83: ~~Size Of Image Segments~~
+2020-7-22 17:48:28.84: Size of Segments for Training = [37, 37, 37]
+2020-7-22 17:48:28.84: Size of Segments for Validation = [17, 17, 17]
+2020-7-22 17:48:28.84: Size of Segments for Testing = [45, 45, 45]
+2020-7-22 17:48:28.84: ~~Dropout Rates~~
+2020-7-22 17:48:28.85: Drop.R. for each layer in Normal Pathway = []
+2020-7-22 17:48:28.85: Drop.R. for each layer in Subsampled Pathway = []
+2020-7-22 17:48:28.85: Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.0, 0.5, 0.5]
+2020-7-22 17:48:28.85: ~~Weight Initialization~~
+2020-7-22 17:48:28.86: Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2020-7-22 17:48:28.86: ~~Activation Function~~
+2020-7-22 17:48:28.86: Activation function to use = prelu
+2020-7-22 17:48:28.87: ~~Batch Normalization~~
+2020-7-22 17:48:28.87: Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2020-7-22 17:48:28.87: Batch Normalization uses a rolling average for inference, over this many batches = 60
+2020-7-22 17:48:28.88: ========== Done with printing session's parameters ==========
+2020-7-22 17:48:28.88: =============================================================
+2020-7-22 17:48:28.89: CONFIG: The configuration file for the [session] was loaded from: /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/testConfig.cfg
+2020-7-22 17:48:28.90: 
+2020-7-22 17:48:28.90: ============     NEW TESTING SESSION    ===============
+2020-7-22 17:48:28.91: 
+2020-7-22 17:48:28.91: =============================================================
+2020-7-22 17:48:28.91: =========== PARAMETERS OF THIS TESTING SESSION ==============
+2020-7-22 17:48:28.92: =============================================================
+2020-7-22 17:48:28.92: sessionName = testSessionDm20200618
+2020-7-22 17:48:28.93: Model will be loaded from save = /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/output/saved_models/trainSessionDm_20200618/deepMedic_mp2r_hipp_amyg_seg_20200618.trainSessionDm_20200618.final.2020-07-03.20.33.03.630252.model.ckpt
+2020-7-22 17:48:28.93: ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2020-7-22 17:48:28.93: Number of cases to perform inference on = 1
+2020-7-22 17:48:28.93: Paths to the channels of each case = [['/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/data/sub-control02/anat/sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd.nii.gz']]
+2020-7-22 17:48:28.93: Paths to provided GT labels per case = ['/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/data/sub-control02/anat/sub-control02_acq-MP2R700um7T_hipp_amyg_reorient.nii.gz']
+2020-7-22 17:48:28.94: Filepaths of the ROI Masks provided per case = ['/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/data/sub-control02/anat/sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_brain_mask.nii.gz']
+2020-7-22 17:48:28.95: Batch size = 10
+2020-7-22 17:48:28.95: ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2020-7-22 17:48:28.95: Path to the main output-folder = /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/output
+2020-7-22 17:48:28.95: Provided names to use to save results for each case = ['sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd_pred.nii.gz']
+2020-7-22 17:48:28.95: ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2020-7-22 17:48:28.95: Save the predicted segmentation = True
+2020-7-22 17:48:28.96: Save the probability maps = [False, True, True, True, True]
+2020-7-22 17:48:28.96: Paths where to save predictions per case = ['/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/output/predictions/testSessionDm20200618/predictions//sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd_pred.nii.gz']
+2020-7-22 17:48:28.96: Suffixes with which to save segmentations and probability maps = {'segm': 'Segm', 'prob': 'ProbMapClass'}
+2020-7-22 17:48:28.96: ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2020-7-22 17:48:28.96: Save FMs in individual images = False
+2020-7-22 17:48:28.97: Save all requested FMs in one 4D image = False
+2020-7-22 17:48:28.97: Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = None
+2020-7-22 17:48:28.97: Save Feature Maps at = ['/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/output/predictions/testSessionDm20200618/features//sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd_pred.nii.gz']
+2020-7-22 17:48:28.97: ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2020-7-22 17:48:28.97: Pad Input Images = True
+2020-7-22 17:48:28.98: ========== Done with printing session's parameters ==========
+2020-7-22 17:48:28.98: =============================================================
+
+2020-7-22 17:48:28.98: =======================================================
+
+2020-7-22 17:48:29.00: =========== Making the CNN graph... ===============
+2020-7-22 17:48:29.00: ...Building the CNN model...
+2020-7-22 17:48:29.01: [Pathway_NORMAL] is being built...
+2020-7-22 17:48:29.01: 	[Pathway_NORMAL]: Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2020-7-22 17:48:29.01: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2020-7-22 17:48:29.01: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2020-7-22 17:48:29.07: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2020-7-22 17:48:29.08: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 35, 35, 35], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 43, 43, 43]
+2020-7-22 17:48:29.15: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2020-7-22 17:48:29.16: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 33, 33, 33], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 41, 41, 41]
+2020-7-22 17:48:29.24: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:29.24: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 31, 31, 31], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 39, 39, 39]
+2020-7-22 17:48:29.32: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2020-7-22 17:48:29.54: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:29.54: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 29, 29, 29], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 37, 37, 37]
+2020-7-22 17:48:29.63: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:29.63: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 27, 27, 27], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 35, 35, 35]
+2020-7-22 17:48:29.71: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2020-7-22 17:48:29.96: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2020-7-22 17:48:29.97: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 25, 25, 25], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 33, 33, 33]
+2020-7-22 17:48:30.06: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2020-7-22 17:48:30.06: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+2020-7-22 17:48:30.15: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2020-7-22 17:48:30.39: 	[Pathway_NORMAL]: Output's Shape: (Train) [None, 50, 21, 21, 21], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 29, 29, 29]
+2020-7-22 17:48:30.40: [Pathway_NORMAL] done.
+2020-7-22 17:48:30.40: [Pathway_SUBSAMPLED[3, 3, 3]] is being built...
+2020-7-22 17:48:30.40: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2020-7-22 17:48:30.40: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2020-7-22 17:48:30.40: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2020-7-22 17:48:30.42: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2020-7-22 17:48:30.42: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 21, 21, 21], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 24, 24, 24]
+2020-7-22 17:48:30.50: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2020-7-22 17:48:30.50: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 22, 22, 22]
+2020-7-22 17:48:30.59: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:30.59: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 17, 17, 17], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 20, 20, 20]
+2020-7-22 17:48:30.67: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2020-7-22 17:48:30.90: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:30.90: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 18, 18, 18]
+2020-7-22 17:48:30.99: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:30.99: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 16, 16, 16]
+2020-7-22 17:48:31.13: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2020-7-22 17:48:31.38: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2020-7-22 17:48:31.38: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 14, 14, 14]
+2020-7-22 17:48:31.48: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2020-7-22 17:48:31.48: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 9, 9, 9], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 12, 12, 12]
+2020-7-22 17:48:31.56: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2020-7-22 17:48:31.81: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Output's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 10, 10, 10]
+2020-7-22 17:48:31.81: [Pathway_SUBSAMPLED[3, 3, 3]] done.
+2020-7-22 17:48:32.16: [Pathway_SUBSAMPLED[5, 5, 5]] is being built...
+2020-7-22 17:48:32.16: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2020-7-22 17:48:32.16: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2020-7-22 17:48:32.16: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2020-7-22 17:48:32.17: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2020-7-22 17:48:32.18: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 20, 20, 20]
+2020-7-22 17:48:32.25: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2020-7-22 17:48:32.26: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 17, 17, 17], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 18, 18, 18]
+2020-7-22 17:48:32.33: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:32.34: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 16, 16, 16]
+2020-7-22 17:48:32.42: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2020-7-22 17:48:32.64: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:32.65: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 14, 14, 14]
+2020-7-22 17:48:32.74: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2020-7-22 17:48:32.74: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 12, 12, 12]
+2020-7-22 17:48:32.83: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2020-7-22 17:48:33.08: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2020-7-22 17:48:33.08: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 9, 9, 9], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 10, 10, 10]
+2020-7-22 17:48:33.23: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2020-7-22 17:48:33.24: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 8, 8, 8]
+2020-7-22 17:48:33.32: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2020-7-22 17:48:33.57: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Output's Shape: (Train) [None, 50, 5, 5, 5], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 6, 6, 6]
+2020-7-22 17:48:33.57: [Pathway_SUBSAMPLED[5, 5, 5]] done.
+2020-7-22 17:48:33.94: DEBUG: Shape of the kernel of the first FC layer is : [3, 3, 3]
+2020-7-22 17:48:33.94: DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [2, 2, 2]
+2020-7-22 17:48:33.99: [Pathway_FC] is being built...
+2020-7-22 17:48:34.00: 	[Pathway_FC]: Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2020-7-22 17:48:34.00: 	[Conv.Layer_0], Filter Shape: [250, 150, 3, 3, 3]
+2020-7-22 17:48:34.01: 	[Conv.Layer_0], Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2020-7-22 17:48:34.22: 	[Conv.Layer_1], Filter Shape: [250, 250, 1, 1, 1]
+2020-7-22 17:48:34.23: 	[Conv.Layer_1], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2020-7-22 17:48:34.32: 	[Pathway_FC]: making Residual Connection between output of [Layer_1] to input of previous layer.
+2020-7-22 17:48:34.65: 	[Conv.Layer_2], Filter Shape: [5, 250, 1, 1, 1]
+2020-7-22 17:48:34.65: 	[Conv.Layer_2], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2020-7-22 17:48:34.75: 	[Pathway_FC]: Output's Shape: (Train) [None, 5, 21, 21, 21], (Val) [None, 5, 1, 1, 1], (Test) [None, 5, 29, 29, 29]
+2020-7-22 17:48:34.75: [Pathway_FC] done.
+2020-7-22 17:48:34.76: Adding the final Softmax Target layer...
+2020-7-22 17:48:34.91: Finished building the CNN's model.
+2020-7-22 17:48:34.92: =========== Compiling the Testing Function ============
+2020-7-22 17:48:34.92: =======================================================
+
+2020-7-22 17:48:34.92: ...Building the function for testing and visualisation of FMs...
+2020-7-22 17:48:34.92: ...Collecting ops and feeds for testing...
+2020-7-22 17:48:34.93: Done.
+2020-7-22 17:48:35.10: =========== Loading parameters from specified saved model ===============
+2020-7-22 17:48:35.10: Loading parameters from:/gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/output/saved_models/trainSessionDm_20200618/deepMedic_mp2r_hipp_amyg_seg_20200618.trainSessionDm_20200618.final.2020-07-03.20.33.03.630252.model.ckpt
+2020-7-22 17:49:16.68: Parameters were loaded.
+2020-7-22 17:49:16.68: 
+2020-7-22 17:49:16.68: ======================================================
+2020-7-22 17:49:16.69: =========== Testing with the CNN model ===============
+2020-7-22 17:49:16.69: ======================================================
+
+2020-7-22 17:49:16.69: ###########################################################################################################
+2020-7-22 17:49:16.69: ############################# Starting full Segmentation of Testing subjects ##########################
+2020-7-22 17:49:16.69: ###########################################################################################################
+2020-7-22 17:49:16.69: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2020-7-22 17:49:16.69: ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2020-7-22 17:49:16.70:  Loading subject with 1st channel at: /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/data/sub-control02/anat/sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd.nii.gz
+2020-7-22 17:49:19.65: Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2020-7-22 17:49:19.87: Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2020-7-22 17:49:19.87: Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2020-7-22 17:49:19.87: Total number of Segments to process:550
+2020-7-22 17:49:19.87: Processed 10/550 segments.
+2020-7-22 17:49:32.81: Processed 110/550 segments.
+2020-7-22 17:49:35.16: Processed 220/550 segments.
+2020-7-22 17:49:37.50: Processed 330/550 segments.
+2020-7-22 17:49:39.84: Processed 440/550 segments.
+2020-7-22 17:49:42.19: Processed 550/550 segments.
+2020-7-22 17:49:42.40: TIMING: Segmentation of subject: [Extracting:] 0.16 [Loading:] 0.13 [ForwardPass:] 21.97 [Total:] 22.26 secs.
+2020-7-22 17:49:43.09: Saving the new label (segmentation) image for the subject #0
+2020-7-22 17:49:43.87: Image saved at: /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/output/predictions/testSessionDm20200618/predictions/sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd_pred_Segm.nii.gz
+2020-7-22 17:49:43.92: Saving the new label (segmentation) image for the subject #0
+2020-7-22 17:49:45.78: Image saved at: /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/output/predictions/testSessionDm20200618/predictions/sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd_pred_ProbMapClass1.nii.gz
+2020-7-22 17:49:45.83: Saving the new label (segmentation) image for the subject #0
+2020-7-22 17:49:47.76: Image saved at: /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/output/predictions/testSessionDm20200618/predictions/sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd_pred_ProbMapClass2.nii.gz
+2020-7-22 17:49:47.81: Saving the new label (segmentation) image for the subject #0
+2020-7-22 17:49:49.72: Image saved at: /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/output/predictions/testSessionDm20200618/predictions/sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd_pred_ProbMapClass3.nii.gz
+2020-7-22 17:49:49.77: Saving the new label (segmentation) image for the subject #0
+2020-7-22 17:49:51.67: Image saved at: /gpfs/data/epilepsy/mri/hpardoe/hipp_amyg_seg_cnn_20200115/pan_acq-MP2R700um7T_T1w_20200116/leave_one_out_analyses_20200618/sub-control02/test/output/predictions/testSessionDm20200618/predictions/sub-control02_acq-MP2R700um7T_T1w_defaced_reorient_subtrMeanDivStd_pred_ProbMapClass4.nii.gz
+2020-7-22 17:49:51.67: +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #0 ++++++++++++++++++++++++++
+2020-7-22 17:49:54.13: ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #0 equal: DICE1=[ 0.8781 0.8936 0.8838 0.8357 0.7661 ] DICE2=[ 0.8781 0.8936 0.8838 0.8357 0.7661 ] DICE3=[ 0.8781 0.8936 0.8838 0.8357 0.7661 ]
+2020-7-22 17:49:54.13: EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
+2020-7-22 17:49:54.14: EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
+2020-7-22 17:49:54.14: EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
+2020-7-22 17:49:54.14: +++++++++++++++++++++++++++++++ Segmentation of all subjects finished +++++++++++++++++++++++++++++++++++
+2020-7-22 17:49:54.14: +++++++++++++++++++++ Reporting Average Segmentation Metrics over all subjects ++++++++++++++++++++++++++
+2020-7-22 17:49:54.14: ACCURACY: (Testing) The Per-Class average DICE Coefficients over all subjects are: DICE1=[ 0.8781 0.8936 0.8838 0.8357 0.7661 ] DICE2=[ 0.8781 0.8936 0.8838 0.8357 0.7661 ] DICE3=[ 0.8781 0.8936 0.8838 0.8357 0.7661 ]
+2020-7-22 17:49:54.15: EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
+2020-7-22 17:49:54.15: EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
+2020-7-22 17:49:54.15: EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
+2020-7-22 17:49:54.16: TIMING: Testing process lasted: 37.47 secs.
+2020-7-22 17:49:54.16: ###########################################################################################################
+2020-7-22 17:49:54.16: ############################# Finished full Segmentation of Testing subjects ##########################
+2020-7-22 17:49:54.16: ###########################################################################################################
+2020-7-22 17:49:54.18: 
+2020-7-22 17:49:54.18: ======================================================
+2020-7-22 17:49:54.18: =========== Testing session finished =================
+2020-7-22 17:49:54.19: ======================================================
+2020-7-22 17:49:54.24: Finished.
